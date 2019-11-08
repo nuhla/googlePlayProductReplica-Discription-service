@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import React, { Component } from 'react';
+
 
 
 class App extends React.Component {
@@ -9,10 +8,12 @@ class App extends React.Component {
 
 
     render(){
-        return (
+        return (<div>
             <h1>hiii </h1>
+            {/* <Index></Index> */}
+            </div>
           );
     }
 }
 
-ReactDOM.render(<App></App>, document.getElementById("root"))
+ReactDOM.render(<App></App>, document.getElementById("app"))
