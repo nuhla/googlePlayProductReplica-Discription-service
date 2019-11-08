@@ -1,16 +1,10 @@
 const express = require('express');
-const port = 3000;
-app.connect()
-const app = express();
-app.use(express.static('public'));
+const port = process.env.PORT ||3000;
+const path = require('path')
 
 
-// app.get('/', (req, res)=>{
-
-//     res.render('main.html');
-// })
-
-app.listen(port, function() {
-    console.log(`listening on port ${port}`);
-  });
+express()
+  .use(express.static(path.join(__dirname, 'public')))
+  .set('view engine', 'jsx')
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
