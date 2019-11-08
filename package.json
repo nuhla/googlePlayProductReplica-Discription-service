@@ -8,16 +8,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-
     "start": "node index.js",
-    
+    "compile": "npx babel src --out-dir public --copy-files --watch",
     "heroku-postbuild": "npm run build"
   },
-  
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-transform-react-jsx-source": "^7.5.0"
   }
 }
