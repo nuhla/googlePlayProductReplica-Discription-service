@@ -4,6 +4,7 @@ const path = require('path')
 
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'module-0')));
 app.get('/', (req, res) =>console.log("hi"));
 app.set('view engine', 'jsx')
 
