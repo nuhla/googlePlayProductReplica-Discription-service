@@ -5,6 +5,7 @@ const path = require('path')
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
+  .get('/', (req, res) => res.render('public/index'))
   .set('view engine', 'jsx')
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+  .listen(port, () => console.log(`Listening on ${ port }`))
 
