@@ -10,8 +10,8 @@ app.use((req, res, next) => {
   });
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'module-0')));
-app.use(express.static(path.join(__dirname, 'node_modules')))
+// app.use(express.static(path.join(__dirname, 'module-0')));
+app.use(express.static(path.join(__dirname, 'node_nmodules')))
 app.get('/', (req, res) =>console.log("hi"));
 // app.set('view engine', 'jsx')
 
