@@ -9,10 +9,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js ",
-    "compile": "npx babel src --out-dir public --copy-files --watch",
-    "heroku login-postbuild": "NPM_CONFIG_PRODUCTION=true && run build"
+    "compile": "npx babel src --out-dir public --copy-files --watch"
   },
-  "proxy": "http://localhost:4000",
   "keywords": [],
   "author": "",
   "license": "ISC",
