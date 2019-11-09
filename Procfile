@@ -1,1 +1,1 @@
-web: npm run start
+web: honcho -f ProcfileHoncho start

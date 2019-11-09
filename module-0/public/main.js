@@ -9,4 +9,5 @@ class Index extends React.Component {
 
 }
 
+ 
 ReactDOM.render(React.createElement(Index, null), document.getElementById("info"));

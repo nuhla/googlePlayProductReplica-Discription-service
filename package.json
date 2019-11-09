@@ -8,19 +8,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node index.js  node module-0/server",
     "compile": "npx babel src --out-dir public --copy-files --watch",
     "heroku-postbuild": "npm run build"
   },
   "proxy": "http://localhost:4000",
-
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.0",
