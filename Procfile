@@ -1,1 +1,1 @@
-web:  node index && cd module-0 && npm install && node server.js 
+web: npm run start
