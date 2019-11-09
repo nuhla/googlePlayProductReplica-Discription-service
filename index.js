@@ -15,14 +15,14 @@ app.use(express.static(path.join(__dirname, 'node_modules')))
 app.get('/', (req, res) =>console.log("hi"));
 // app.set('view engine', 'jsx')
 
-// app.get('/mod1', function(req, res){ 
-//   request('http://127.0.0.1:3001/main.js', function (error, response, body) { 
-//     if (!error && response.statusCode === 200) { 
-//       console.log(body); 
-//       res.send(body); 
-//     } 
-//    }); 
-// });
+app.get('/mod1', function(req, res){ 
+  request('http://127.0.0.1:3001/main.js', function (error, response, body) { 
+    if (!error && response.statusCode === 200) { 
+      console.log(body); 
+      res.send(body); 
+    } 
+   }); 
+});
 
 app.listen(port, () => console.log(`Listening on ${ port }`))
 
