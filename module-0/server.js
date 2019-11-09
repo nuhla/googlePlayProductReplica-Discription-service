@@ -1,5 +1,5 @@
 const express = require('express');
-const port = process.env.PORT+1 ||3001;
+const port = 3001;
 const path = require('path')
 
 const app = express();
