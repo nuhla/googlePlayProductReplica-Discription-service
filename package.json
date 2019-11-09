@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node index.js ",
     "compile": "npx babel src --out-dir public --copy-files --watch",
-    "heroku login-postbuild": "NPM_CONFIG_PRODUCTION=false && run build"
+    "heroku login-postbuild": "NPM_CONFIG_PRODUCTION=true && run build"
   },
   "proxy": "http://localhost:4000",
   "keywords": [],
