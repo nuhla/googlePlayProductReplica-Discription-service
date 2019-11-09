@@ -8,15 +8,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js ",
+    "start": "nodemon --exec node index.js ",
     "compile": "npx babel src --out-dir public --copy-files --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "honcho": "^0.2.5",
+    "nodemon": "^1.19.4",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "request": "^2.88.0"
@@ -24,6 +26,7 @@
   "devDependencies": {
     "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.2",
-    "@babel/plugin-transform-react-jsx-source": "^7.5.0"
+    "@babel/plugin-transform-react-jsx-source": "^7.5.0",
+    "mongoose": "^5.7.9"
   }
 }
