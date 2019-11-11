@@ -1,5 +1,6 @@
 module.exports = {
-  mongoURI: "mongodb://FINZ:FINZ@finz-shard-00-00-0pho2.mongodb.net:27017",
+  mongoURI:
+    "mongodb+srv://FINZ:1111@finz-0pho2.mongodb.net/dis?retryWrites=true&w=majority",
 
   monoCFG: {
     useNewUrlParser: true,
@@ -7,6 +8,7 @@ module.exports = {
     ssl: true,
     replicaSet: "FINZ- shard - 0",
     authSource: "admin",
-    retryWrites: true
+    retryWrites: true,
+    dbName: "Products"
   }
 };
