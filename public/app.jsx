@@ -28,19 +28,7 @@ class App extends React.Component {
     };
   }
 
-  ClickMe(e) {
-    Div = styled.div`
-      font-size: 0.8em;
-      margin: 0.5em;
-      padding: 0.25em 1em;
-      border-radius: 1px;
-      border: 1px solid #feedfe;
-      border-radius: 1px;
-      display: block;
-      height: 20%;
-    `;
-    console.log("iam in");
-  }
+  ClickMe = function(e) {};
   componentDidMount() {
     /// first try is to get data from database for the first object in it
     if (
