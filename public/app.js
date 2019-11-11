@@ -1,3 +1,4 @@
+// a styled component objects for the css
 const Container = styled.div`
   font-size: 1em;
   margin: 0.5em;
@@ -58,28 +59,46 @@ class App extends React.Component {
       openreadmoe: false
     };
     this.handleClick = this.handleClick.bind(this);
-  }
+  } // function to Handel button click and chang the ShowMore state
+
 
   handleClick(e) {
     this.setState({
       openreadmoe: !this.state.openreadmoe
     });
     console.log(this.state.openreadmoe);
-  }
+  } /// a lifcycle function fiers when the Dom is Mounted to Html Page
+
 
   componentDidMount() {
-    /// first try is to get data from database for the first object in it
+    var itemId = "00-00-1";
+    var windowurl = window.location.href;
+
+    if (windowurl.indexOf("itemid") > -1) {
+      itemId = windowurl.substring(windowurl.indexOf("itemid") + "itemid".length + 1, windowurl.length);
+    }
+    /*
+    Case one :if the url of the page conatins a parameter of itemid 
+    the component will aske the data pase to get the data of this id item and then bound it to the component
+    
+    seound case: if the url has no itemid parameter and there id no data pounded to this component props
+    then i will give it an intial value for the itemid and get the data form the database
+    
+    third case : if there is a data bounded to the props already then give it to the compnent in a reglar way*/
+
+
     if (typeof this.props.userId === "undefined" || typeof this.props.userId === "null") {
-      var that = this;
+      var that = this; /// send and aget request to get the info of the id
+
       $.ajax({
         url: "https://agile-waters-08360.herokuapp.com/discrp",
         type: "GET",
         data: {
-          userId: "00-00-1"
+          userId: itemId
         },
         datatype: "apllication/json",
         success: function (response) {
-          console.log("sucssed");
+          // putting the value of success response to this comp state
           that.setState({
             userId: response.data.userID,
             Discription: response.data.description
@@ -90,11 +109,12 @@ class App extends React.Component {
         }
       });
     } else {
+      // this is the third Case when there is already item id sent to the user
       this.setState({
         userId: this.props.userId
       });
       $.ajax({
-        url: "/discrp",
+        url: "https://agile-waters-08360.herokuapp.com/discrp",
         type: "GET",
         data: {
           userId: that.state.userId
@@ -121,6 +141,7 @@ class App extends React.Component {
     }, "Less"));
   }
 
-}
+} // writing in the DOM object
 
-ReactDOM.render(React.createElement(App, null), document.getElementById("app"));
+
+ReactDOM.render(React.createElement(App, null), document.getElementById("Discrption"));
