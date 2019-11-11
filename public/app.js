@@ -4,7 +4,7 @@ const Container = styled.div`
   padding: 0.25em 1em;
   border: 1px solid #f8f5ff;
   border-radius: 10px;
-
+  font-family: Scheherazade, Arial, Helvetica, sans-serif;
   word-wrap: break-word;
 `;
 const Div = styled.div`
@@ -17,6 +17,8 @@ const Div = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: pre-line;
+  font-family: Scheherazade, Arial, Helvetica, sans-serif;
+  line-height: 3.6;
 
   word-wrap: break-word;
 `;
@@ -24,6 +26,8 @@ const Divall = styled.div`
   font-size: 0.8em;
   margin: 0.5em;
   padding: 0.25em 1em;
+  font-family: Scheherazade, Arial, Helvetica, sans-serif;
+  line-height: 3.6;
 
   display: block;
   height: 100%;
