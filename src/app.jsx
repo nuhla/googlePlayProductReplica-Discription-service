@@ -17,13 +17,13 @@ class App extends React.Component {
       $.ajax({
         url: "https://agile-waters-08360.herokuapp.com/discrp",
         type: "GET",
-        data: { userId: "00-00-1" },
+        data: { userId: "00-00-4" },
         datatype: "apllication/json",
         success: function(response) {
           console.log("sucssed");
           that.setState({
-            userId: response.username,
-            Discription: response.Discription
+            userId: response.data.userID,
+            Discription: response.data.description
           });
         },
         error: function(error) {

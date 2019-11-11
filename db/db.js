@@ -22,11 +22,11 @@ var ProductSchema = new mongoose.Schema({
   }
 });
 
-var ExampleData = {
-  userID: "00-00-1",
-  description: "ddddddddddddd",
-  updateDate: Date.now()
-};
+// var ExampleData = {
+//   userID: "00-00-1",
+//   description: "ddddddddddddd",
+//   updateDate: Date.now()
+// };
 // console.log(Date.now());
 //Create model from the Schema
 var Product = mongoose.model("Product", ProductSchema);
@@ -46,7 +46,7 @@ var save = function(data) {
 
 //save(ExampleData);
 //a function to find the disciption of this item
-var findOne = function(obj) {
+var findOne = function(obj, callback) {
   Product.findOne(obj, "disciption", function(err, person) {
     if (err) console.log(err, "this a database error");
     // Prints "Space Ghost is a talk show host".

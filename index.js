@@ -24,8 +24,20 @@ app.use((req, res, next) => {
 //to handel the get request of the component
 app.get("/discrp", (req, res) => {
   console.log("in the discr rout");
-  res.send(fackdata[0]);
-  console.log(req.url);
+
+  var val = req.url.substring(
+    req.url.indexOf("userId") + "userId".length + 1,
+    req.url.length
+  );
+
+  console.log(val);
+  db.Product.findOne({ userID: val }, function(err, data) {
+    console.log("i am in ");
+    if (err) {
+      console.log("err", err);
+    }
+    res.send({ data: data });
+  });
 });
 
 /// define and use our static directores in the app
