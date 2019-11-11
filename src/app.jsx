@@ -15,7 +15,7 @@ class App extends React.Component {
     ) {
       var that = this;
       $.ajax({
-        url: "/discrp",
+        url: "https://agile-waters-08360.herokuapp.com/discrp",
         type: "GET",
         data: { userId: "00-00-1" },
         datatype: "apllication/json",
@@ -55,9 +55,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <div class="container">
-        <p>{this.state.Discription}</p>
-        <div></div>
+      <div
+        className="alert  alert-danger alert-dismissible fade show"
+        role="alert"
+      >
+        <p className="hidden">{this.state.Discription}</p>
+        <button
+          type="button"
+          className="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
     );
   }

@@ -14,6 +14,7 @@ mongoose
 
 //Using Schema constructor, create a ProductSchema
 var ProductSchema = new mongoose.Schema({
+  userID: String,
   description: String,
   updateDate: {
     type: Date,
@@ -21,7 +22,11 @@ var ProductSchema = new mongoose.Schema({
   }
 });
 
-var ExampleData = { description: "ddddddddddddd", updateDate: Date.now() };
+var ExampleData = {
+  userID: "00-00-1",
+  description: "ddddddddddddd",
+  updateDate: Date.now()
+};
 // console.log(Date.now());
 //Create model from the Schema
 var Product = mongoose.model("Product", ProductSchema);
@@ -31,7 +36,7 @@ var save = function(data) {
   // console.log(data);
   var newProduct = new Product(data);
   newProduct.save((error, product) => {
-    if (err) {
+    if (error) {
       console.log("error", err);
     } else {
       console.log(product);
@@ -39,7 +44,7 @@ var save = function(data) {
   });
 };
 
-save(ExampleData);
+//save(ExampleData);
 //a function to find the disciption of this item
 var findOne = function(obj) {
   Product.findOne(obj, "disciption", function(err, person) {

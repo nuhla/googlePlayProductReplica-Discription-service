@@ -12,7 +12,7 @@ class App extends React.Component {
     if (typeof this.props.userId === "undefined" || typeof this.props.userId === "null") {
       var that = this;
       $.ajax({
-        url: "/discrp",
+        url: "https://agile-waters-08360.herokuapp.com/discrp",
         type: "GET",
         data: {
           userId: "00-00-1"
@@ -54,7 +54,19 @@ class App extends React.Component {
   }
 
   render() {
-    return React.createElement("div", null, React.createElement("p", null, this.state.Discription), React.createElement("div", null));
+    return React.createElement("div", {
+      className: "alert  alert-danger alert-dismissible fade show",
+      role: "alert"
+    }, React.createElement("p", {
+      className: "hidden"
+    }, this.state.Discription), React.createElement("button", {
+      type: "button",
+      className: "close",
+      "data-dismiss": "alert",
+      "aria-label": "Close"
+    }, React.createElement("span", {
+      "aria-hidden": "true"
+    }, "\xD7")));
   }
 
 }
