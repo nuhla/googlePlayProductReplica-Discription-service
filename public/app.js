@@ -1,44 +1,66 @@
+const Container = styled.div`
+  font-size: 1em;
+  margin: 0.5em;
+  padding: 0.25em 1em;
+  border: 1px solid #f8f5ff;
+  border-radius: 10px;
+
+  word-wrap: break-word;
+`;
 const Div = styled.div`
   font-size: 0.8em;
   margin: 0.5em;
   padding: 0.25em 1em;
-  border-radius: 1px;
-  border: 1px solid #feedfe;
-  border-radius: 1px;
+
   display: block;
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-line;
+
+  word-wrap: break-word;
+`;
+const Divall = styled.div`
+  font-size: 0.8em;
+  margin: 0.5em;
+  padding: 0.25em 1em;
+
+  display: block;
+  height: 100%;
+  text-overflow: ellipsis;
+  white-space: pre-line;
 `;
 const InnerDv = styled.button`
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 0.25em 1em;
   border-radius: 0px;
   border: 0px 
   border-radius: 0px;
+
   width: 100%;
-  background: rgb(254,237,254);
-background: linear-gradient(180deg, rgba(254,237,254,1) 0%, rgba(255,255,255,1) 16%, rgba(249,249,249,1) 88%, rgba(251,239,239,1) 100%);
-`;
+  height:80px;
+  border-radius: 20px 10px;
+  background-color:#ffffff;
+  border-top: 0px ;
+
+  color: green;`;
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       Discription: "",
-      userId: 0
+      userId: 0,
+      openreadmoe: false
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  ClickMe(e) {
-    Div = styled.div`
-      font-size: 0.8em;
-      margin: 0.5em;
-      padding: 0.25em 1em;
-      border-radius: 1px;
-      border: 1px solid #feedfe;
-      border-radius: 1px;
-      display: block;
-      height: 20%;
-    `;
-    console.log("iam in");
+  handleClick(e) {
+    this.setState({
+      openreadmoe: !this.state.openreadmoe
+    });
+    console.log(this.state.openreadmoe);
   }
 
   componentDidMount() {
@@ -88,9 +110,11 @@ class App extends React.Component {
   }
 
   render() {
-    return React.createElement(Div, null, React.createElement("p", null, this.state.Discription), React.createElement(InnerDv, {
-      onclick: this.ClickMe.bind(this)
-    }, "read more"));
+    return React.createElement(Container, null, !this.state.openreadmoe ? React.createElement(Div, null, React.createElement("p", null, this.state.Discription)) : React.createElement(Divall, null, React.createElement("p", null, this.state.Discription)), !this.state.openreadmoe ? React.createElement(InnerDv, {
+      onClick: this.handleClick
+    }, "read more") : React.createElement(InnerDv, {
+      onClick: this.handleClick
+    }, "Less"));
   }
 
 }
