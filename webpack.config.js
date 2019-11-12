@@ -1,9 +1,9 @@
 const webpack = require("webpack");
 const path = require("path");
 const config = {
-  entry: ["react-hot-loader/patch", "./src/app.jsx"],
+  entry: ["react-hot-loader/patch", "./src"],
   output: {
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js"
   },
   module: {
@@ -16,10 +16,10 @@ const config = {
     ]
   },
   resolve: {
-    extensions: [".js", ".jsx"],
-    alias: {
-      "react-dom": "@hot-loader/react-dom"
-    }
+    extensions: [".js", ".jsx"]
+    // alias: {
+    //   "react-dom": "@hot-loader/react-dom"
+    // }
   },
   devServer: {
     contentBase: "./dist"
