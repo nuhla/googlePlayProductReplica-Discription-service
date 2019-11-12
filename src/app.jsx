@@ -1,5 +1,5 @@
 // // a styled component objects for the css
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 
