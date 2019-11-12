@@ -1,5 +1,5 @@
-// a styled component objects for the css
-const Container = window.styled.div`
+// // a styled component objects for the css
+const Container = styled.div`
   font-size: 1em;
   margin: 0.5em;
   padding: 0.25em 1em;
@@ -9,7 +9,7 @@ const Container = window.styled.div`
   word-wrap: break-word;
 `;
 
-const Div = window.styled.div`
+const Div = styled.div`
   font-size: 0.8em;
   margin: 0.5em;
   padding: 0.25em 1em;
@@ -25,7 +25,7 @@ const Div = window.styled.div`
   word-wrap: break-word;
 `;
 
-const Divall = window.styled.div`
+const Divall = styled.div`
   font-size: 0.8em;
   margin: 0.5em;
   padding: 0.25em 1em;
@@ -38,11 +38,11 @@ const Divall = window.styled.div`
   white-space: pre-line;
 `;
 
-const InnerDv = window.styled.button`
+const InnerDv = styled.button`
   font-size: 1.5em;
   padding: 0.25em 1em;
   border-radius: 0px;
-  border: 0px 
+  border: 0px
   border-radius: 0px;
 
   width: 100%;
@@ -85,12 +85,12 @@ class App extends React.Component {
     }
     console.log(itemId);
     /*
-    Case one :if the url of the page conatins a parameter of itemid 
+    Case one :if the url of the page conatins a parameter of itemid
     the component will aske the data pase to get the data of this id item and then bound it to the component
-    
+
     seound case: if the url has no itemid parameter and there id no data pounded to this component props
     then i will give it an intial value for the itemid and get the data form the database
-    
+
     third case : if there is a data bounded to the props already then give it to the compnent in a reglar way*/
     if (
       typeof this.props.userId === "undefined" ||
