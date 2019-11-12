@@ -75,7 +75,7 @@ class App extends React.Component {
 
   /// a lifcycle function fiers when the Dom is Mounted to Html Page
   componentDidMount() {
-    var itemId = "00-00-1";
+    var itemId = 1;
     var windowurl = window.location.href;
     if (windowurl.indexOf("itemid") > -1) {
       itemId = windowurl.substring(
@@ -83,7 +83,7 @@ class App extends React.Component {
         windowurl.length
       );
     }
-
+    console.log(itemId);
     /*
     Case one :if the url of the page conatins a parameter of itemid 
     the component will aske the data pase to get the data of this id item and then bound it to the component
@@ -97,12 +97,12 @@ class App extends React.Component {
       typeof this.props.userId === "null"
     ) {
       var that = this;
-
+      console.log(itemId);
       /// send and aget request to get the info of the id
       $.ajax({
         url: "https://agile-waters-08360.herokuapp.com/discrp",
         type: "GET",
-        data: { userId: itemId },
+        data: { userId: parseInt(itemId) },
         datatype: "apllication/json",
         success: function(response) {
           // putting the value of success response to this comp state

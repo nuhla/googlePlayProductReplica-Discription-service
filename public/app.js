@@ -71,12 +71,14 @@ class App extends React.Component {
 
 
   componentDidMount() {
-    var itemId = "00-00-1";
+    var itemId = 1;
     var windowurl = window.location.href;
 
     if (windowurl.indexOf("itemid") > -1) {
       itemId = windowurl.substring(windowurl.indexOf("itemid") + "itemid".length + 1, windowurl.length);
     }
+
+    console.log(itemId);
     /*
     Case one :if the url of the page conatins a parameter of itemid 
     the component will aske the data pase to get the data of this id item and then bound it to the component
@@ -86,15 +88,15 @@ class App extends React.Component {
     
     third case : if there is a data bounded to the props already then give it to the compnent in a reglar way*/
 
-
     if (typeof this.props.userId === "undefined" || typeof this.props.userId === "null") {
-      var that = this; /// send and aget request to get the info of the id
+      var that = this;
+      console.log(itemId); /// send and aget request to get the info of the id
 
       $.ajax({
         url: "https://agile-waters-08360.herokuapp.com/discrp",
         type: "GET",
         data: {
-          userId: itemId
+          userId: parseInt(itemId)
         },
         datatype: "apllication/json",
         success: function (response) {

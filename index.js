@@ -36,6 +36,7 @@ app.get("/discrp", (req, res) => {
     if (err) {
       console.log("err", err);
     }
+    console.log(data);
     res.send({ data: data });
   });
 });
