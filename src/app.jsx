@@ -1,5 +1,5 @@
 // a styled component objects for the css
-const Container = window.styled.div`
+const Container = styled.div`
   font-size: 1em;
   margin: 0.5em;
   padding: 0.25em 1em;
@@ -9,7 +9,7 @@ const Container = window.styled.div`
   word-wrap: break-word;
 `;
 
-const Div = window.styled.div`
+const Div = styled.div`
   font-size: 0.8em;
   margin: 0.5em;
   padding: 0.25em 1em;
@@ -25,7 +25,7 @@ const Div = window.styled.div`
   word-wrap: break-word;
 `;
 
-const Divall = window.styled.div`
+const Divall = styled.div`
   font-size: 0.8em;
   margin: 0.5em;
   padding: 0.25em 1em;
@@ -38,7 +38,7 @@ const Divall = window.styled.div`
   white-space: pre-line;
 `;
 
-const InnerDv = window.styled.button`
+const InnerDv = styled.button`
   font-size: 1.5em;
   padding: 0.25em 1em;
   border-radius: 0px;
