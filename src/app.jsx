@@ -1,4 +1,6 @@
 // // a styled component objects for the css
+import styled from "styled-components";
+
 const Container = styled.div`
   font-size: 1em;
   margin: 0.5em;
