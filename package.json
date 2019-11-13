@@ -9,7 +9,7 @@
   "scripts": {
     "start": "nodemon --exec node index.js ",
     "compile": "npx babel src --out-dir public --copy-files --watch",
-    "react-dev": "webpack -d "
+    "react-dev": "webpack -d --watch "
   },
   "keywords": [],
   "author": "",
