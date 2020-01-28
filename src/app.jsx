@@ -36,7 +36,7 @@ const Div = styled.div`
 //---------------------------------------------------------------------//
 //-- create another style for an Div's using styled component sheet ---//
 //---------------------------------------------------------------------//
-const Divall = styled.div`
+const Divall = styled.article`
   font-size: 0.8em;
   margin: 0.5em;
   padding: 0.25em 1em;
