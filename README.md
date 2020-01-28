@@ -25,9 +25,9 @@ and if he is intrested to read the whole discription he will open it by read mor
 - nodemon.
 
 # How to Get Started
--fork the repo.
--clone it .
--run command "npm i'
--run command "npm run start"
+- fork the repo.
+- clone it .
+- run command "npm i'
+- run command "npm run start"
 - Open http://localhost:3003/ on a web page
 
