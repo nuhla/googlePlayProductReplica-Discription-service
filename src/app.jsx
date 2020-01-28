@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
+//------------------------------------------------------------------------------//
+//-- create a style for a container dive's using styled component sheet --------//
+//------------------------------------------------------------------------------//
 const Container = styled.div`
   font-size: 1em;
   margin: 0.5em;
@@ -13,11 +16,13 @@ const Container = styled.div`
   word-wrap: break-word;
 `;
 
+//---------------------------------------------------------------------//
+//-- create a style for an dive's using styled component sheet --------//
+//---------------------------------------------------------------------//
 const Div = styled.div`
   font-size: 0.8em;
   margin: 0.5em;
   padding: 0.25em 1em;
-
   display: block;
   max-height: 100px;
   overflow: hidden;
@@ -25,10 +30,12 @@ const Div = styled.div`
   white-space: pre-line;
   font-family: Scheherazade, Arial, Helvetica, sans-serif;
   line-height: 3.6;
-
   word-wrap: break-word;
 `;
 
+//---------------------------------------------------------------//
+//-- create another style for an Div's using styled component sheet ---//
+//---------------------------------------------------------------//
 const Divall = styled.div`
   font-size: 0.8em;
   margin: 0.5em;
@@ -40,6 +47,10 @@ const Divall = styled.div`
   text-overflow: ellipsis;
   white-space: pre-line;
 `;
+
+//---------------------------------------------------------------------//
+//-- create a style for an paragraph's using styled component sheet ---//
+//---------------------------------------------------------------------//
 const NotFounded = styled.p`
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
@@ -52,6 +63,9 @@ const NotFounded = styled.p`
   height: 100%;
 `;
 
+//-----------------------------------------------------------------------//
+//-- create a style for an Button's using styled component sheet --------//
+//-----------------------------------------------------------------------//
 const InnerDv = styled.button`
   font-size: 1.2em;
   padding: 0.25em 1em;
@@ -64,6 +78,9 @@ const InnerDv = styled.button`
   color: #33691e;
 `;
 
+//------------------------------------------------------------------------------//
+//-- start creating the component by defining its class and constructor --------//
+//------------------------------------------------------------------------------//
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -197,6 +214,7 @@ class App extends React.Component {
     );
   }
 }
-
-// writing in the DOM object
+//------------------------------------------------------------------------//
+//------------------- writing in the DOM object --------------------------//
+//------------------------------------------------------------------------//
 ReactDOM.render(<App></App>, document.getElementById('Discrption'));
