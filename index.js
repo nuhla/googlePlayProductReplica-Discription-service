@@ -7,9 +7,9 @@ const db = require('./db/db');
 const fackdata = require('./config/data');
 const config = require(__dirname + '/config/keys');
 
-//--------------------------------------------------------------------------------------------------//
-//------------------- requiring and using body parser to parse our req body ------------------------//
-//--------------------------------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------------------------------------//
+//------------------- requiring and using body parser to parse our req body ---------------------------------//
+//-----------------------------------------------------------------------------------------------------------//
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -20,24 +20,29 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //------------------------------------------------------------------------------------------------------------//
 const port = process.env.PORT || 3003;
 
-/// this line is for te cross origin - prplem
+//------------------------------------------------------------------------------------------------------------//
+//------------------------------------- this line is for te cross origin - proplem----------------------------//
+//------------------------------------------------------------------------------------------------------------//
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   next();
 });
-
-//to handel the get request of the component
+//-------------------------------------------------------------------------------------------------------------//
+//-----------------------------to handel the get request of the component -------------------------------------//
+//-------------------------------------------------------------------------------------------------------------//
 app.get('/discrp', (req, res) => {
-  console.log('in the discr rout');
-
+  //------------------------------------------------------------------------------------------------------------//
+  //----- geting the id number from the page query by substring the link string and index of variable-----------//
+  //---------------------------------- userId length of this word ----------------------------------------------//
+  //------------------------------------------------------------------------------------------------------------//
   var val = req.url.substring(
     req.url.indexOf('userId') + 'userId'.length + 1,
     req.url.length
   );
-
-  console.log(val);
+  //-------------------------------------------------------------------------------------------------------------//
+  //-------------- depending on the user id from the link query we will get the discription for a the item ------//
+  //-------------------------------------------------------------------------------------------------------------//
   db.Product.findOne({ userID: val }, function(err, data) {
-    console.log('i am in ');
     if (err) {
       console.log('err', err);
     }
@@ -45,9 +50,10 @@ app.get('/discrp', (req, res) => {
   });
 });
 
-/// define and use our static directores in the app
+//----------------------------------------------------------------------------------------------------------//
+//------------------------------ define and use our static directores in the app ---------------------------//
+//----------------------------------------------------------------------------------------------------------//
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(express.static(path.join(__dirname, 'module-0')));
 app.use(express.static(path.join(__dirname, 'node_nmodules')));
 
 app.get('/', (req, res) => {});
