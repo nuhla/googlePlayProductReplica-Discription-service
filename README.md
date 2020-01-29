@@ -1,6 +1,6 @@
 # googlePlayProductReplica-Discription-service
 
-# Main site contains the app is :
+# Main site that contains this app is :
 https://google-play-replica.herokuapp.com/?itemid=4
 # stand Alone App :
 https://agile-waters-08360.herokuapp.com/
